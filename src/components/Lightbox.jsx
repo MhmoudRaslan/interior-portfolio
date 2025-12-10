@@ -10,10 +10,12 @@ const Lightbox = ({ images, currentIndex, onClose, onNext, onPrev }) => {
     };
 
     document.addEventListener('keydown', handleKeyDown);
+    // prevent page scroll while lightbox is open
     document.body.style.overflow = '';
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
+      // restore scrolling
       document.body.style.overflow = '';
     };
   }, [onClose, onNext, onPrev]);
