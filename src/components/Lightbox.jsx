@@ -10,11 +10,11 @@ const Lightbox = ({ images, currentIndex, onClose, onNext, onPrev }) => {
     };
 
     document.addEventListener('keydown', handleKeyDown);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = '';
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     };
   }, [onClose, onNext, onPrev]);
 
